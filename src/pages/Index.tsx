@@ -55,7 +55,7 @@ const Index = () => {
                 Book Now
               </a>
             </Button>
-            <Button variant="outline" size="xl" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button variant="outline" size="xl" className="text-white border-white">
               <MapPin className="w-5 h-5" />
               View Location
             </Button>

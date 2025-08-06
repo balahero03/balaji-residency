@@ -52,7 +52,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Traditional temple colors
+				// Maroon and gold theme colors
 				'temple-gold': 'hsl(var(--temple-gold))',
 				'temple-brown': 'hsl(var(--temple-brown))',
 				'terracotta-light': 'hsl(var(--terracotta-light))',

@@ -8,44 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Traditional South Indian earth tones */
-    --background: 42 15% 97%;
-    --foreground: 30 15% 15%;
+    /* Maroon and gold color scheme */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
 
-    --card: 42 20% 95%;
-    --card-foreground: 30 15% 15%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 42 20% 95%;
-    --popover-foreground: 30 15% 15%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Terracotta primary - warm reddish-brown */
-    --primary: 20 55% 45%;
-    --primary-foreground: 42 20% 95%;
+    /* Maroon primary */
+    --primary: 352 75% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Sandalwood secondary - warm cream */
-    --secondary: 42 25% 85%;
-    --secondary-foreground: 30 15% 25%;
+    /* Light cream secondary */
+    --secondary: 45 20% 92%;
+    --secondary-foreground: 0 0% 25%;
 
-    /* Temple brown muted */
-    --muted: 30 20% 88%;
-    --muted-foreground: 30 15% 45%;
+    /* Light gray muted */
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Turmeric accent - golden yellow */
-    --accent: 45 85% 65%;
-    --accent-foreground: 30 15% 25%;
+    /* Light gold accent */
+    --accent: 45 85% 75%;
+    --accent-foreground: 0 0% 25%;
 
     --destructive: 0 75% 55%;
-    --destructive-foreground: 42 20% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 42 20% 85%;
-    --input: 42 20% 90%;
-    --ring: 20 55% 45%;
+    --border: 0 0% 88%;
+    --input: 0 0% 94%;
+    --ring: 352 75% 35%;
 
-    /* Traditional design elements */
-    --temple-gold: 45 85% 65%;
-    --temple-brown: 30 30% 25%;
-    --terracotta-light: 20 35% 65%;
-    --sandalwood-dark: 42 20% 75%;
+    /* Traditional design elements - maroon and gold theme */
+    --temple-gold: 45 85% 75%;
+    --temple-brown: 352 25% 25%;
+    --terracotta-light: 352 45% 55%;
+    --sandalwood-dark: 45 15% 85%;
     
     /* Gradients */
     --gradient-temple: linear-gradient(135deg, hsl(var(--temple-gold)), hsl(var(--accent)));
@@ -79,40 +79,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode with warm earth tones */
-    --background: 30 20% 8%;
-    --foreground: 42 20% 95%;
+    /* Dark mode with maroon and gold */
+    --background: 352 15% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 30 25% 12%;
-    --card-foreground: 42 20% 95%;
+    --card: 352 20% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 30 25% 12%;
-    --popover-foreground: 42 20% 95%;
+    --popover: 352 20% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 20 55% 55%;
-    --primary-foreground: 30 20% 8%;
+    --primary: 352 75% 45%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 30 20% 15%;
-    --secondary-foreground: 42 20% 85%;
+    --secondary: 352 15% 15%;
+    --secondary-foreground: 0 0% 85%;
 
-    --muted: 30 20% 15%;
-    --muted-foreground: 42 15% 65%;
+    --muted: 352 15% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 45 75% 55%;
-    --accent-foreground: 30 20% 8%;
+    --accent: 45 75% 65%;
+    --accent-foreground: 352 15% 8%;
 
     --destructive: 0 65% 45%;
-    --destructive-foreground: 42 20% 95%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 30 20% 20%;
-    --input: 30 20% 20%;
-    --ring: 20 55% 55%;
+    --border: 352 15% 20%;
+    --input: 352 15% 20%;
+    --ring: 352 75% 45%;
     
     /* Dark mode temple elements */
-    --temple-gold: 45 75% 55%;
-    --temple-brown: 30 15% 75%;
-    --terracotta-light: 20 45% 55%;
-    --sandalwood-dark: 42 15% 25%;
+    --temple-gold: 45 75% 65%;
+    --temple-brown: 352 10% 75%;
+    --terracotta-light: 352 35% 55%;
+    --sandalwood-dark: 45 10% 25%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
