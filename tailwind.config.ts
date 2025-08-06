@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Traditional temple colors
+				'temple-gold': 'hsl(var(--temple-gold))',
+				'temple-brown': 'hsl(var(--temple-brown))',
+				'terracotta-light': 'hsl(var(--terracotta-light))',
+				'sandalwood-dark': 'hsl(var(--sandalwood-dark))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -68,6 +73,23 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-temple': 'var(--gradient-temple)',
+				'gradient-earth': 'var(--gradient-earth)',
+				'gradient-hero': 'var(--gradient-hero)',
+			},
+			boxShadow: {
+				'temple': 'var(--shadow-temple)',
+				'warm': 'var(--shadow-warm)',
+			},
+			fontFamily: {
+				'serif': ['Playfair Display', 'serif'],
+				'sans': ['Inter', 'sans-serif'],
+			},
+			animation: {
+				'temple-glow': 'temple-glow 3s ease-in-out infinite alternate',
+				'kolam-pulse': 'kolam-pulse 2s ease-in-out infinite',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -83,6 +105,24 @@ export default {
 					},
 					to: {
 						height: '0'
+					}
+				},
+				'temple-glow': {
+					'0%': {
+						boxShadow: '0 0 20px hsl(var(--temple-gold) / 0.3)',
+					},
+					'100%': {
+						boxShadow: '0 0 40px hsl(var(--temple-gold) / 0.6)',
+					}
+				},
+				'kolam-pulse': {
+					'0%, 100%': {
+						opacity: '0.7',
+						transform: 'scale(1)',
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.02)',
 					}
 				}
 			},
