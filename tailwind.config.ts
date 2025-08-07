@@ -54,9 +54,9 @@ export default {
 				},
 				// Maroon and gold theme colors
 				'temple-gold': 'hsl(var(--temple-gold))',
-				'temple-brown': 'hsl(var(--temple-brown))',
+				'temple-maroon': 'hsl(var(--temple-maroon))',
 				'terracotta-light': 'hsl(var(--terracotta-light))',
-				'sandalwood-dark': 'hsl(var(--sandalwood-dark))',
+				'sandalwood-light': 'hsl(var(--sandalwood-light))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
