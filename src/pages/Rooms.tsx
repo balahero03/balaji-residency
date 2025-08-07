@@ -23,8 +23,6 @@ const Rooms = () => {
   const roomTypes = [
     {
       title: "Single Non-AC Room",
-      price: "₹400",
-      priceNote: "per night",
       capacity: "1 Person",
       icon: <Fan className="w-8 h-8" />,
       features: [
@@ -39,8 +37,6 @@ const Rooms = () => {
     },
     {
       title: "Double AC Room",
-      price: "₹1000",
-      priceNote: "per night",
       capacity: "2 People",
       icon: <Snowflake className="w-8 h-8" />,
       features: [
@@ -56,8 +52,6 @@ const Rooms = () => {
     },
     {
       title: "Triple Bed Room",
-      price: "₹1400",
-      priceNote: "per night", 
       capacity: "3 People",
       icon: <Bed className="w-8 h-8" />,
       features: [
@@ -73,8 +67,6 @@ const Rooms = () => {
     },
     {
       title: "Family Suite (5 Beds)",
-      price: "₹2000",
-      priceNote: "per night",
       capacity: "5 People",
       icon: <Users className="w-8 h-8" />,
       features: [
@@ -148,11 +140,11 @@ const Rooms = () => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="flex items-center text-2xl font-bold text-primary">
-                          <IndianRupee className="w-5 h-5" />
-                          {room.price.replace('₹', '')}
-                        </div>
-                        <p className="text-sm text-muted-foreground">{room.priceNote}</p>
+                        <Button variant="booking" size="sm" asChild>
+                          <a href="tel:9442422556">
+                            Call for Rates
+                          </a>
+                        </Button>
                       </div>
                     </div>
                   </CardHeader>

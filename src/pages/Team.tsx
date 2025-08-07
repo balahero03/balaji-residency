@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, Users, Award, Heart, Shield, Phone } from "lucide-react";
+import { Star, Quote, Users, Award, Heart, Shield, Phone, MapPin, GraduationCap, Trophy } from "lucide-react";
+import ownerPhoto from "@/assets/owner-photo.jpg";
 
 const Team = () => {
   const testimonials = [
@@ -25,7 +26,7 @@ const Team = () => {
       name: "Prakash Kumar",
       location: "Bangalore",
       rating: 5,
-      quote: "Affordable rates, excellent service. Will definitely return for future visits. The location is perfect for temple visits.",
+      quote: "Excellent service and perfect location. Will definitely return for future visits. The staff understands pilgrims' needs very well.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
@@ -34,13 +35,6 @@ const Team = () => {
       rating: 5,
       quote: "Perfect for devotees. Traditional feel with modern comfort. The staff understands the needs of pilgrims very well.",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-    },
-    {
-      name: "Suresh Anand",
-      location: "Madurai",
-      rating: 5,
-      quote: "Family-friendly environment with all necessary amenities. The proximity to the temple made our pilgrimage very convenient.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face"
     }
   ];
 
@@ -69,6 +63,13 @@ const Team = () => {
     { number: "16", label: "Comfortable Rooms", description: "Accommodations for every need" }
   ];
 
+  const ownerCareer = [
+    { year: "2013", event: "Founded Balaji Residency with a vision to serve pilgrims", icon: <Trophy className="w-5 h-5" /> },
+    { year: "2016", event: "Expanded to 16 rooms and received first hospitality award", icon: <Award className="w-5 h-5" /> },
+    { year: "2019", event: "Recognized as 'Best Pilgrim Accommodation' by Tamil Nadu Tourism", icon: <Star className="w-5 h-5" /> },
+    { year: "2023", event: "Celebrated 10 years of service with 5000+ satisfied guests", icon: <Users className="w-5 h-5" /> }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -78,7 +79,7 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Our Team Achievements
+              Meet Our Team
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
               Dedicated to serving pilgrims with traditional hospitality and unwavering commitment 
@@ -88,30 +89,103 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Mission Statement */}
+      {/* Owner Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-8">
-              Our Sacred Commitment
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <img 
+                  src={ownerPhoto}
+                  alt="Mr. Balaji - Owner of Balaji Residency"
+                  className="rounded-lg shadow-temple object-cover w-full h-96 lg:h-[500px]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-2">
+                    Mr. Balaji Kumar
+                  </h2>
+                  <p className="text-lg text-temple-gold font-medium mb-4">
+                    Founder & Managing Director
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
+                    <div className="flex items-center space-x-1">
+                      <GraduationCap className="w-4 h-4" />
+                      <span>B.Com, Hospitality Management</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <MapPin className="w-4 h-4" />
+                      <span>Thirunallar, Karaikal</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    With over 10 years of dedicated service in the hospitality industry, Mr. Balaji Kumar 
+                    founded Balaji Residency with a simple yet profound vision: to provide every pilgrim 
+                    visiting the sacred Saneeswaran Temple with comfortable, affordable, and spiritually 
+                    enriching accommodation.
+                  </p>
+                  <p>
+                    Born and raised in Thirunallar, he understands the deep spiritual significance of this 
+                    holy town and the needs of devotees who travel from far and wide. His commitment to 
+                    traditional values combined with modern hospitality standards has made Balaji Residency 
+                    a trusted name among pilgrims.
+                  </p>
+                  <p>
+                    Under his leadership, the residency has welcomed over 5,000 guests and received 25+ 
+                    awards for excellence in service. His personal motto: "Every guest is a blessing, 
+                    and their comfort is our sacred duty."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Timeline */}
+      <section className="py-20 bg-gradient-earth">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
+              Journey of Excellence
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              At Balaji Residency, our team is united by a singular mission: to provide every 
-              pilgrim and traveler with an experience that honors both their spiritual journey 
-              and their need for comfort. We believe that hospitality is not just a service, 
-              but a sacred duty that we perform with devotion and pride.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Our family-run approach ensures that every guest receives personal attention and 
-              care, making Balaji Residency not just a place to stay, but a home away from home 
-              in the spiritual heart of Thirunallar.
-            </p>
+            
+            <div className="space-y-6">
+              {ownerCareer.map((milestone, index) => (
+                <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-temple p-3 rounded-full text-primary-foreground flex-shrink-0 mt-1">
+                        {milestone.icon}
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-3 mb-2">
+                          <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                            {milestone.year}
+                          </span>
+                        </div>
+                        <p className="text-foreground leading-relaxed">
+                          {milestone.event}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Team Values */}
-      <section className="py-20 bg-gradient-earth">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
@@ -186,6 +260,7 @@ const Team = () => {
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                        loading="lazy"
                       />
                       <div className="flex-1">
                         <div className="flex items-center space-x-2 mb-2">

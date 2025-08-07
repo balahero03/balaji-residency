@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
@@ -6,49 +7,154 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import { 
   MapPin, 
   Phone, 
   Clock, 
   Navigation, 
-  Mail,
   MessageCircle,
-  ExternalLink
+  Send,
+  Star,
+  CheckCircle
 } from "lucide-react";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    checkIn: "",
+    checkOut: "",
+    guests: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Our Location",
       details: [
         "No 01, Main Road",
-        "Near Saniswaran Temple (50 meters)",
+        "Near Saneeswaran Temple (50 meters)",
         "Thirunallar – 609607",
-        "Karaikal, Puducherry"
+        "Karaikal District, Puducherry"
       ]
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Phone Numbers",
+      title: "Contact Numbers", 
       details: [
         "Primary: 9442422556",
         "Secondary: 9942024595",
-        "Available 24/7 for bookings",
-        "WhatsApp enabled"
+        "24/7 Booking Available",
+        "Tamil & English Support"
       ]
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Service Hours",
+      title: "Check-in Hours",
       details: [
-        "Check-in: Flexible timing",
-        "Check-out: Flexible timing", 
-        "Reception: 24/7 available",
-        "Temple visits: Early morning recommended"
+        "Check-in: 12:00 PM onwards",
+        "Check-out: 11:00 AM",
+        "Reception: 24/7 Available", 
+        "Early check-in: On request"
+      ]
+    },
+    {
+      icon: <Navigation className="w-6 h-6" />,
+      title: "Getting Here",
+      details: [
+        "50m from Saneeswaran Temple",
+        "2km from Karaikal Bus Stand",
+        "15km from Karaikal Railway Station",
+        "Free parking available"
       ]
     }
   ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Validate required fields
+    if (!formData.name || !formData.phone || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in your name, phone number, and message.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Create WhatsApp message
+    const whatsappMessage = `*New Booking Inquiry - Balaji Residency*
+
+👤 *Guest Details:*
+Name: ${formData.name}
+Phone: ${formData.phone}
+${formData.email ? `Email: ${formData.email}` : ''}
+
+📅 *Stay Details:*
+${formData.checkIn ? `Check-in: ${formData.checkIn}` : ''}
+${formData.checkOut ? `Check-out: ${formData.checkOut}` : ''}
+${formData.guests ? `Number of Guests: ${formData.guests}` : ''}
+
+💬 *Message:*
+${formData.message}
+
+---
+*Sent from balajiresidency.com*`;
+
+    const whatsappUrl = `https://wa.me/919442422556?text=${encodeURIComponent(whatsappMessage)}`;
+
+    try {
+      // Open WhatsApp in new tab/app
+      window.open(whatsappUrl, '_blank');
+      
+      // Show success message
+      toast({
+        title: "Message Prepared!",
+        description: "WhatsApp is opening with your message. Please send it to complete your inquiry.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        checkIn: "",
+        checkOut: "",
+        guests: ""
+      });
+
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was an issue opening WhatsApp. Please call us directly at 9442422556.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const quickWhatsApp = () => {
+    const quickMessage = `Hi! I would like to book a room at Balaji Residency, Thirunallar. Please share availability and current rates.`;
+    const whatsappUrl = `https://wa.me/919442422556?text=${encodeURIComponent(quickMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -106,64 +212,76 @@ const Contact = () => {
               {/* Contact Form */}
               <Card className="border-none shadow-temple">
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl text-primary">
-                    Send us a Message
+                  <CardTitle className="font-serif text-2xl text-primary flex items-center space-x-2">
+                    <MessageCircle className="w-6 h-6 text-temple-gold" />
+                    <span>Send us a Message</span>
                   </CardTitle>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we'll send your inquiry directly to our WhatsApp for instant response.
                   </p>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input 
-                      id="name" 
-                      placeholder="Enter your full name"
-                      className="border-border focus:border-primary"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input 
-                      id="email" 
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="border-border focus:border-primary"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel"
-                      placeholder="Enter your phone number"
-                      className="border-border focus:border-primary"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message"
-                      placeholder="Tell us about your requirements, dates, number of guests, etc."
-                      rows={4}
-                      className="border-border focus:border-primary"
-                    />
-                  </div>
-                  
-                  <Button variant="booking" size="lg" className="w-full">
-                    <MessageCircle className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
-                  
-                  <p className="text-sm text-muted-foreground text-center">
-                    For immediate booking, please call us directly at{" "}
-                    <a href="tel:9442422556" className="text-primary hover:underline font-medium">
-                      9442422556
-                    </a>
-                  </p>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Full Name *</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Your full name"
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone Number *</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="Your phone number"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Message *</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="Tell us about your visit plans, room preferences, or any special requirements..."
+                        required
+                      />
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Button 
+                        type="submit" 
+                        variant="booking" 
+                        size="lg"
+                        disabled={isSubmitting}
+                        className="flex-1"
+                      >
+                        <Send className="w-4 h-4" />
+                        {isSubmitting ? "Preparing..." : "Send via WhatsApp"}
+                      </Button>
+                    </div>
+
+                    <div className="flex items-start space-x-2 text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p>
+                        Your message will be sent directly to our WhatsApp for immediate attention. 
+                        We typically respond within 30 minutes.
+                      </p>
+                    </div>
+                  </form>
                 </CardContent>
               </Card>
 
@@ -240,15 +358,9 @@ const Contact = () => {
                         </a>
                       </Button>
                       
-                      <Button variant="outline" size="lg" className="w-full justify-start" asChild>
-                        <a 
-                          href="https://balajiresidencytnr.blogspot.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-3" />
-                          Visit Our Blog
-                        </a>
+                      <Button variant="temple" size="lg" onClick={quickWhatsApp} className="w-full">
+                        <MessageCircle className="w-5 h-5" />
+                        Quick WhatsApp
                       </Button>
                     </div>
                   </CardContent>

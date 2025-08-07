@@ -19,7 +19,7 @@ const Index = () => {
   const features = [
     { title: "Prime Location", description: "Just 50 meters from Saneeswaran Temple", icon: <MapPin className="w-6 h-6" /> },
     { title: "Traditional Comfort", description: "Heritage hospitality with modern amenities", icon: <Star className="w-6 h-6" /> },
-    { title: "Affordable Rates", description: "Budget-friendly rooms starting from ₹400", icon: <Users className="w-6 h-6" /> },
+    { title: "Affordable Rates", description: "Budget-friendly rooms for every pilgrim", icon: <Users className="w-6 h-6" /> },
     { title: "24/7 Service", description: "Round-the-clock assistance for pilgrims", icon: <Clock className="w-6 h-6" /> },
   ];
 
@@ -55,7 +55,7 @@ const Index = () => {
                 Book Now
               </a>
             </Button>
-            <Button variant="outline" size="xl" className="text-white border-white">
+            <Button variant="outline" size="xl" className="text-white border-white bg-white/20 backdrop-blur hover:bg-white/30 transition-all duration-300 shadow-lg">
               <MapPin className="w-5 h-5" />
               View Location
             </Button>

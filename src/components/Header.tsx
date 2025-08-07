@@ -20,7 +20,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
+    <header className="sticky top-0 z-50 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/90 border-b border-primary-foreground/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -29,10 +29,10 @@ const Header = () => {
               <span className="text-primary-foreground font-bold text-lg">B</span>
             </div>
             <div>
-              <h1 className="font-serif font-bold text-xl lg:text-2xl text-primary">
+              <h1 className="font-serif font-bold text-xl lg:text-2xl text-primary-foreground">
                 Balaji Residency
               </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
+              <p className="text-xs text-primary-foreground/80 hidden sm:block">
                 Where Devotion Meets Comfort
               </p>
             </div>
@@ -44,10 +44,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors hover:text-temple-gold ${
                   isActive(item.href)
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-foreground"
+                    ? "text-temple-gold border-b-2 border-temple-gold"
+                    : "text-primary-foreground"
                 }`}
               >
                 {item.name}
