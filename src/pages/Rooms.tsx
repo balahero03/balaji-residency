@@ -4,14 +4,14 @@ import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Users, 
-  Snowflake, 
-  Fan, 
-  Bed, 
-  Bath, 
-  Wifi, 
-  Car, 
+import {
+  Users,
+  Snowflake,
+  Fan,
+  Bed,
+  Bath,
+  Wifi,
+  Car,
   Phone,
   MapPin,
   Star,
@@ -99,11 +99,11 @@ const Rooms = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Rooms & Rates
+              Our Rooms
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Choose from our comfortable accommodations designed for pilgrims and travelers, 
-              with options for every budget and group size
+              Choose from our comfortable accommodations designed for pilgrims and travelers,
+              with options for every group size
             </p>
           </div>
         </div>
@@ -115,9 +115,8 @@ const Rooms = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8">
               {roomTypes.map((room, index) => (
-                <Card key={index} className={`border-none shadow-warm hover:shadow-temple transition-all duration-300 relative ${
-                  room.popular ? 'ring-2 ring-temple-gold' : ''
-                }`}>
+                <Card key={index} className={`border-none shadow-warm hover:shadow-temple transition-all duration-300 relative ${room.popular ? 'ring-2 ring-temple-gold' : ''
+                  }`}>
                   {room.popular && (
                     <Badge className="absolute -top-3 left-6 bg-gradient-temple text-primary-foreground">
                       Most Popular
@@ -142,7 +141,7 @@ const Rooms = () => {
                       <div className="text-right">
                         <Button variant="booking" size="sm" asChild>
                           <a href="tel:9442422556">
-                            Call for Rates
+                            Book Now
                           </a>
                         </Button>
                       </div>
@@ -178,15 +177,15 @@ const Rooms = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Included in All Rooms
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Every room at Balaji Residency comes with essential amenities to ensure 
-                  your comfort during your pilgrimage. We believe in providing value 
+                  Every room at Balaji Residency comes with essential amenities to ensure
+                  your comfort during your pilgrimage. We believe in providing value
                   without compromising on quality.
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   {commonAmenities.map((amenity, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -200,10 +199,10 @@ const Rooms = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="relative">
-                <img 
-                  src={roomInterior} 
+                <img
+                  src={roomInterior}
                   alt="Room interior at Balaji Residency"
                   className="rounded-lg shadow-temple object-cover w-full h-96"
                 />

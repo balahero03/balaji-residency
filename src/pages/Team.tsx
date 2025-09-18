@@ -17,7 +17,7 @@ const Team = () => {
     },
     {
       name: "Meena Subramani",
-      location: "Thanjavur", 
+      location: "Thanjavur",
       rating: 5,
       quote: "Best lodging near Saneeswaran temple. Came with family and everyone was comfortable. The rooms were spacious and clean.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b098?w=150&h=150&fit=crop&crop=face"
@@ -46,7 +46,7 @@ const Team = () => {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Trust & Reliability", 
+      title: "Trust & Reliability",
       description: "Built over 10+ years of consistent service and unwavering commitment to guest satisfaction"
     },
     {
@@ -58,14 +58,13 @@ const Team = () => {
 
   const achievements = [
     { number: "5000+", label: "Satisfied Guests", description: "Pilgrims who found comfort and peace" },
-    { number: "25+", label: "Awards Won", description: "Recognition for service excellence" },
     { number: "10+", label: "Years of Service", description: "Decade of traditional hospitality" },
     { number: "16", label: "Comfortable Rooms", description: "Accommodations for every need" }
   ];
 
   const ownerCareer = [
     { year: "2013", event: "Founded Balaji Residency with a vision to serve pilgrims", icon: <Trophy className="w-5 h-5" /> },
-    { year: "2016", event: "Expanded to 16 rooms and received first hospitality award", icon: <Award className="w-5 h-5" /> },
+    { year: "2016", event: "Expanded to 16 rooms to serve more pilgrims", icon: <Users className="w-5 h-5" /> },
     { year: "2019", event: "Recognized as 'Best Pilgrim Accommodation' by Tamil Nadu Tourism", icon: <Star className="w-5 h-5" /> },
     { year: "2023", event: "Celebrated 10 years of service with 5000+ satisfied guests", icon: <Users className="w-5 h-5" /> }
   ];
@@ -82,7 +81,7 @@ const Team = () => {
               Meet Our Team
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Dedicated to serving pilgrims with traditional hospitality and unwavering commitment 
+              Dedicated to serving pilgrims with traditional hospitality and unwavering commitment
               to excellence in the sacred town of Thirunallar
             </p>
           </div>
@@ -95,7 +94,7 @@ const Team = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <img 
+                <img
                   src={ownerPhoto}
                   alt="Mr. Balaji - Owner of Balaji Residency"
                   className="rounded-lg shadow-temple object-cover w-full h-96 lg:h-[500px]"
@@ -103,7 +102,7 @@ const Team = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
               </div>
-              
+
               <div className="space-y-6">
                 <div>
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-2">
@@ -123,23 +122,23 @@ const Team = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With over 10 years of dedicated service in the hospitality industry, Mr. Balaji Kumar 
-                    founded Balaji Residency with a simple yet profound vision: to provide every pilgrim 
-                    visiting the sacred Saneeswaran Temple with comfortable, affordable, and spiritually 
+                    With over 10 years of dedicated service in the hospitality industry, Mr. Balaji Kumar
+                    founded Balaji Residency with a simple yet profound vision: to provide every pilgrim
+                    visiting the sacred Saneeswaran Temple with comfortable, affordable, and spiritually
                     enriching accommodation.
                   </p>
                   <p>
-                    Born and raised in Thirunallar, he understands the deep spiritual significance of this 
-                    holy town and the needs of devotees who travel from far and wide. His commitment to 
-                    traditional values combined with modern hospitality standards has made Balaji Residency 
+                    Born and raised in Thirunallar, he understands the deep spiritual significance of this
+                    holy town and the needs of devotees who travel from far and wide. His commitment to
+                    traditional values combined with modern hospitality standards has made Balaji Residency
                     a trusted name among pilgrims.
                   </p>
                   <p>
-                    Under his leadership, the residency has welcomed over 5,000 guests and received 25+ 
-                    awards for excellence in service. His personal motto: "Every guest is a blessing, 
+                    Under his leadership, the residency has welcomed over 5,000 guests and continues to
+                    serve with excellence. His personal motto: "Every guest is a blessing,
                     and their comfort is our sacred duty."
                   </p>
                 </div>
@@ -156,7 +155,7 @@ const Team = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Journey of Excellence
             </h2>
-            
+
             <div className="space-y-6">
               {ownerCareer.map((milestone, index) => (
                 <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300">
@@ -191,7 +190,7 @@ const Team = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Our Core Values
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {teamValues.map((value, index) => (
                 <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300 text-center">
@@ -220,7 +219,7 @@ const Team = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-12">
               Milestones of Excellence
             </h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {achievements.map((achievement, index) => (
                 <div key={index} className="text-center">
@@ -250,13 +249,13 @@ const Team = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               What Our Guests Say
             </h2>
-            
+
             <div className="grid lg:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
                 <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <img 
+                      <img
                         src={testimonial.image}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full object-cover flex-shrink-0"
@@ -271,13 +270,13 @@ const Team = () => {
                             from {testimonial.location}
                           </span>
                         </div>
-                        
+
                         <div className="flex items-center space-x-1 mb-3">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 fill-temple-gold text-temple-gold" />
                           ))}
                         </div>
-                        
+
                         <div className="relative">
                           <Quote className="w-6 h-6 text-temple-gold opacity-50 absolute -top-2 -left-2" />
                           <blockquote className="text-muted-foreground italic pl-4">
@@ -304,9 +303,9 @@ const Team = () => {
                   Our Promise to You
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Every member of the Balaji Residency team is committed to making your stay 
-                  memorable. From the moment you arrive until your departure, we ensure that 
-                  your pilgrimage experience is enhanced by our warm hospitality and 
+                  Every member of the Balaji Residency team is committed to making your stay
+                  memorable. From the moment you arrive until your departure, we ensure that
+                  your pilgrimage experience is enhanced by our warm hospitality and
                   dedicated service.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

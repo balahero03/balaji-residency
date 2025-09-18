@@ -27,8 +27,7 @@ const About = () => {
   const achievements = [
     { number: "16", label: "Rooms in Residency", icon: <Users className="w-6 h-6" /> },
     { number: "5000+", label: "Happy Customers", icon: <Star className="w-6 h-6" /> },
-    { number: "10", label: "Years in Service", icon: <Clock className="w-6 h-6" /> },
-    { number: "25", label: "Awards Won", icon: <Award className="w-6 h-6" /> }
+    { number: "10", label: "Years in Service", icon: <Clock className="w-6 h-6" /> }
   ];
 
   return (
@@ -37,7 +36,7 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{ backgroundImage: `url(${hotelFront})` }}
         />
@@ -47,7 +46,7 @@ const About = () => {
               About Balaji Residency
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              A family legacy of devotion, service, and traditional hospitality 
+              A family legacy of devotion, service, and traditional hospitality
               in the sacred town of Thirunallar
             </p>
           </div>
@@ -65,28 +64,28 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Balaji Residency was born from a deep reverence for the sacred tradition 
-                    of hosting pilgrims and travelers in Thirunallar. For over a decade, 
-                    our family has dedicated itself to providing comfortable, affordable 
+                    Balaji Residency was born from a deep reverence for the sacred tradition
+                    of hosting pilgrims and travelers in Thirunallar. For over a decade,
+                    our family has dedicated itself to providing comfortable, affordable
                     accommodation just steps away from the revered Saneeswaran Temple.
                   </p>
                   <p>
-                    We are a creative residency located in the spiritual town of Thirunallar, 
-                    where devotion meets comfort. Through our commitment to traditional 
-                    hospitality combined with modern amenities, we've won awards and earned 
+                    We are a creative residency located in the spiritual town of Thirunallar,
+                    where devotion meets comfort. Through our commitment to traditional
+                    hospitality combined with modern amenities, we've won awards and earned
                     trust from over 5000 satisfied guests.
                   </p>
                   <p>
-                    Our mission remains simple: to welcome every guest with the warmth and 
-                    respect that the sacred land of Thirunallar deserves, ensuring their 
+                    Our mission remains simple: to welcome every guest with the warmth and
+                    respect that the sacred land of Thirunallar deserves, ensuring their
                     spiritual journey is complemented by peaceful rest and genuine care.
                   </p>
                 </div>
               </div>
-              
+
               <div className="relative">
-                <img 
-                  src={hotelFront} 
+                <img
+                  src={hotelFront}
                   alt="Balaji Residency heritage building"
                   className="rounded-lg shadow-temple object-cover w-full h-96"
                 />
@@ -104,7 +103,7 @@ const About = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Our Core Values
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {values.map((value, index) => (
                 <Card key={index} className="text-center border-none shadow-warm hover:shadow-temple transition-all duration-300">
@@ -136,8 +135,8 @@ const About = () => {
             <p className="text-xl text-center mb-12 opacity-90">
               Recognized for our unwavering commitment to service excellence
             </p>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+            <div className="grid grid-cols-3 gap-6 md:gap-8">
               {achievements.map((achievement, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-white/10 backdrop-blur rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -167,15 +166,15 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                At Balaji Residency, we envision being the preferred sanctuary for every 
-                devotee and traveler who seeks authentic South Indian hospitality in 
-                Thirunallar. Our commitment extends beyond providing accommodation – 
+                At Balaji Residency, we envision being the preferred sanctuary for every
+                devotee and traveler who seeks authentic South Indian hospitality in
+                Thirunallar. Our commitment extends beyond providing accommodation –
                 we aim to be a bridge between the spiritual journey and physical comfort.
               </p>
               <p>
-                Every room, every service, and every interaction reflects our dedication 
-                to preserving the sacred tradition of 'Atithi Devo Bhava' – treating 
-                guests as divine. We continue to evolve while staying rooted in our 
+                Every room, every service, and every interaction reflects our dedication
+                to preserving the sacred tradition of 'Atithi Devo Bhava' – treating
+                guests as divine. We continue to evolve while staying rooted in our
                 core values of devotion, integrity, and service.
               </p>
             </div>

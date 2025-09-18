@@ -8,11 +8,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  MapPin, 
-  Phone, 
-  Clock, 
-  Navigation, 
+import {
+  MapPin,
+  Phone,
+  Clock,
+  Navigation,
   MessageCircle,
   Send,
   Star,
@@ -45,7 +45,7 @@ const Contact = () => {
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Contact Numbers", 
+      title: "Contact Numbers",
       details: [
         "Primary: 9442422556",
         "Secondary: 9942024595",
@@ -59,7 +59,7 @@ const Contact = () => {
       details: [
         "Check-in: 12:00 PM onwards",
         "Check-out: 11:00 AM",
-        "Reception: 24/7 Available", 
+        "Reception: 24/7 Available",
         "Early check-in: On request"
       ]
     },
@@ -121,7 +121,7 @@ ${formData.message}
     try {
       // Open WhatsApp in new tab/app
       window.open(whatsappUrl, '_blank');
-      
+
       // Show success message
       toast({
         title: "Message Prepared!",
@@ -151,7 +151,7 @@ ${formData.message}
   };
 
   const quickWhatsApp = () => {
-    const quickMessage = `Hi! I would like to book a room at Balaji Residency, Thirunallar. Please share availability and current rates.`;
+    const quickMessage = `Hi! I would like to book a room at Balaji Residency, Thirunallar. Please share availability.`;
     const whatsappUrl = `https://wa.me/919442422556?text=${encodeURIComponent(quickMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -168,7 +168,7 @@ ${formData.message}
               Contact Us
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Reach out to us for bookings, inquiries, or any assistance you need 
+              Reach out to us for bookings, inquiries, or any assistance you need
               for your pilgrimage to Thirunallar
             </p>
           </div>
@@ -262,9 +262,9 @@ ${formData.message}
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button 
-                        type="submit" 
-                        variant="booking" 
+                      <Button
+                        type="submit"
+                        variant="booking"
                         size="lg"
                         disabled={isSubmitting}
                         className="flex-1"
@@ -277,7 +277,7 @@ ${formData.message}
                     <div className="flex items-start space-x-2 text-sm text-muted-foreground">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <p>
-                        Your message will be sent directly to our WhatsApp for immediate attention. 
+                        Your message will be sent directly to our WhatsApp for immediate attention.
                         We typically respond within 30 minutes.
                       </p>
                     </div>
@@ -292,7 +292,7 @@ ${formData.message}
                     <h3 className="font-serif text-xl font-bold text-primary mb-4">
                       Location & Directions
                     </h3>
-                    
+
                     {/* Embedded Map Placeholder */}
                     <div className="bg-muted rounded-lg h-64 flex items-center justify-center mb-6">
                       <div className="text-center">
@@ -305,25 +305,36 @@ ${formData.message}
                         </p>
                       </div>
                     </div>
-                    
+
+                    <Button variant="outline" size="lg" className="w-full mb-4" asChild>
+                      <a
+                        href="https://www.google.com/maps/place/Balaji+Residency+(Residency+%2F+Lodge+In+Thirunallar)/@10.9267874,79.7925233,411m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5517123f74247d:0x4094ab9c8a9ba7ea!8m2!3d10.9267874!4d79.7934637!16s%2Fg%2F11fst1pkf2?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapPin className="w-4 h-4 mr-2" />
+                        View on Google Maps
+                      </a>
+                    </Button>
+
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
                         <Navigation className="w-5 h-5 text-temple-gold mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-medium text-foreground">From Karaikal Bus Stand</h4>
                           <p className="text-sm text-muted-foreground">
-                            Take auto/taxi towards Thirunallar (8 km). Get down at Saneeswaran Temple. 
+                            Take auto/taxi towards Thirunallar (8 km). Get down at Saneeswaran Temple.
                             Balaji Residency is just 50 meters from the temple.
                           </p>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-start space-x-3">
                         <Navigation className="w-5 h-5 text-temple-gold mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-medium text-foreground">From Nagapattinam</h4>
                           <p className="text-sm text-muted-foreground">
-                            Take bus/car via Karaikal road (35 km). Follow signs to Thirunallar 
+                            Take bus/car via Karaikal road (35 km). Follow signs to Thirunallar
                             temple. Look for our signboard near the temple.
                           </p>
                         </div>
@@ -338,7 +349,7 @@ ${formData.message}
                     <h3 className="font-serif text-xl font-bold text-primary mb-4">
                       Quick Contact Options
                     </h3>
-                    
+
                     <div className="space-y-3">
                       <Button variant="outline" size="lg" className="w-full justify-start" asChild>
                         <a href="tel:9442422556">
@@ -346,9 +357,9 @@ ${formData.message}
                           Call: 9442422556
                         </a>
                       </Button>
-                      
+
                       <Button variant="outline" size="lg" className="w-full justify-start" asChild>
-                        <a 
+                        <a
                           href="https://wa.me/919442422556?text=Hi,%20I%20would%20like%20to%20book%20a%20room%20at%20Balaji%20Residency"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -357,7 +368,7 @@ ${formData.message}
                           WhatsApp Booking
                         </a>
                       </Button>
-                      
+
                       <Button variant="temple" size="lg" onClick={quickWhatsApp} className="w-full">
                         <MessageCircle className="w-5 h-5" />
                         Quick WhatsApp
@@ -381,7 +392,7 @@ ${formData.message}
                   Need Immediate Assistance?
                 </h3>
                 <p className="text-xl mb-8 opacity-90">
-                  We're available 24/7 for emergency bookings and guest assistance. 
+                  We're available 24/7 for emergency bookings and guest assistance.
                   Don't hesitate to reach out anytime during your pilgrimage.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,0 +1,32 @@
+{
+  "name": "Balaji Residency Thirunallar",
+  "short_name": "Balaji Residency",
+  "description": "Sacred stay near Saneeswaran Temple in Thirunallar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d97706",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "lodging", "hospitality"],
+  "lang": "en",
+  "dir": "ltr"
+}

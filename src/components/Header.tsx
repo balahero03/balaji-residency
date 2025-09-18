@@ -24,10 +24,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-temple rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">B</span>
-            </div>
+          <Link to="/" className="flex items-center">
             <div>
               <h1 className="font-serif font-bold text-xl lg:text-2xl text-primary-foreground">
                 Balaji Residency

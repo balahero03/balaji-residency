@@ -8,21 +8,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-temple rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">B</span>
-              </div>
+            <div className="flex items-center">
               <h3 className="font-serif font-bold text-lg text-primary">
                 Balaji Residency
               </h3>
             </div>
             <p className="text-sm text-muted-foreground">
-              Where Devotion Meets Comfort. Traditional hospitality just 50 meters 
+              Where Devotion Meets Comfort. Traditional hospitality just 50 meters
               from the sacred Saneeswaran Temple in Thirunallar.
             </p>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground">
               <span>🏆</span>
-              <span>25+ Awards | 5000+ Happy Guests</span>
+              <span>5000+ Happy Guests</span>
             </div>
           </div>
 
@@ -37,7 +34,7 @@ const Footer = () => {
                 Services
               </Link>
               <Link to="/rooms" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Rooms & Rates
+                Our Rooms
               </Link>
               <Link to="/gallery" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Gallery
@@ -54,10 +51,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <p className="text-sm text-muted-foreground">
-                  No 01, Main Road, Near Saniswaran Temple (50 meters), 
+                <a
+                  href="https://www.google.com/maps/place/Balaji+Residency+(Residency+%2F+Lodge+In+Thirunallar)/@10.9267874,79.7925233,411m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a5517123f74247d:0x4094ab9c8a9ba7ea!8m2!3d10.9267874!4d79.7934637!16s%2Fg%2F11fst1pkf2?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  No 01, Main Road, Near Saniswaran Temple (50 meters),
                   Thirunallar – 609607
-                </p>
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-primary" />
@@ -98,17 +100,15 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <span>|</span>
-            <a 
-              href="https://balajiresidencytnr.blogspot.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://balajiresidencytnr.blogspot.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors flex items-center space-x-1"
             >
               <span>More Info</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-            <span>|</span>
-            <span>Design by Shakthi Ads</span>
           </div>
         </div>
       </div>
