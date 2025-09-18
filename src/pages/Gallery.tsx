@@ -3,19 +3,13 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Eye, Download, Phone } from "lucide-react";
-import hotelFront from "@/assets/hotel-front.jpg";
+import { Eye, Download, Phone, Star, Quote } from "lucide-react";
 import templeView from "@/assets/temple-view.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
 import kolamPattern from "@/assets/kolam-pattern.jpg";
 
 const Gallery = () => {
   const galleryImages = [
-    {
-      src: hotelFront,
-      title: "Front View of Residency",
-      description: "Traditional architecture welcoming pilgrims"
-    },
     {
       src: templeView,
       title: "Saneeswaran Temple View",
@@ -33,29 +27,29 @@ const Gallery = () => {
     }
   ];
 
-  const testimonialImages = [
+  const testimonials = [
     {
       name: "Ramesh Iyer",
       location: "Chennai",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
       quote: "Clean, peaceful, and very close to temple. Staff was kind."
     },
     {
-      name: "Meena Subramani", 
+      name: "Meena Subramani",
       location: "Thanjavur",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b098?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
       quote: "Best lodging near Saneeswaran temple. Came with family."
     },
     {
       name: "Prakash Kumar",
       location: "Bangalore",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
       quote: "Affordable rates, excellent service. Will definitely return."
     },
     {
       name: "Lakshmi Devi",
       location: "Kumbakonam",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      rating: 5,
       quote: "Perfect for devotees. Traditional feel with modern comfort."
     }
   ];
@@ -72,7 +66,7 @@ const Gallery = () => {
               Our Gallery Photos
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Take a visual journey through Balaji Residency and discover the beauty 
+              Take a visual journey through Balaji Residency and discover the beauty
               of traditional hospitality in Thirunallar
             </p>
           </div>
@@ -87,7 +81,7 @@ const Gallery = () => {
               {galleryImages.map((image, index) => (
                 <Card key={index} className="group border-none shadow-warm hover:shadow-temple transition-all duration-300 overflow-hidden">
                   <div className="relative overflow-hidden">
-                    <img 
+                    <img
                       src={image.src}
                       alt={image.title}
                       className="w-full h-64 lg:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -121,28 +115,32 @@ const Gallery = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Happy Guest Memories
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonialImages.map((testimonial, index) => (
-                <Card key={index} className="border-none shadow-warm">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <img 
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover"
-                      />
-                      <div className="flex-1">
-                        <div className="mb-3">
-                          <h4 className="font-semibold text-foreground">
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <CardContent className="p-8">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h4 className="font-semibold text-foreground text-lg">
                             {testimonial.name}
                           </h4>
-                          <p className="text-sm text-muted-foreground">
-                            {testimonial.location}
-                          </p>
+                          <span className="text-sm text-muted-foreground">
+                            from {testimonial.location}
+                          </span>
                         </div>
-                        <blockquote className="text-muted-foreground italic">
-                          "{testimonial.quote}"
+                        <div className="flex items-center space-x-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-temple-gold text-temple-gold hover:scale-110 transition-transform duration-200" />
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="relative">
+                        <Quote className="w-8 h-8 text-temple-gold opacity-30 absolute -top-2 -left-2" />
+                        <blockquote className="text-muted-foreground italic pl-6 text-base leading-relaxed">
+                          {testimonial.quote}
                         </blockquote>
                       </div>
                     </div>
@@ -164,7 +162,7 @@ const Gallery = () => {
                   Experience Balaji Residency
                 </h3>
                 <p className="text-xl mb-8 opacity-90">
-                  Visit us in person to experience the warmth of traditional 
+                  Visit us in person to experience the warmth of traditional
                   South Indian hospitality combined with modern comfort.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -192,7 +190,7 @@ const Gallery = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Explore More
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-none shadow-warm hover:shadow-temple transition-all duration-300 cursor-pointer">
                 <CardContent className="p-6 text-center">

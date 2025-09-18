@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, Award, Star, Heart, Shield } from "lucide-react";
-import hotelFront from "@/assets/hotel-front.jpg";
 
 const About = () => {
   const values = [
@@ -35,12 +34,8 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: `url(${hotelFront})` }}
-        />
-        <div className="relative container mx-auto px-4">
+      <section className="py-20 lg:py-32 bg-gradient-earth">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
               About Balaji Residency
@@ -84,12 +79,15 @@ const About = () => {
               </div>
 
               <div className="relative">
-                <img
-                  src={hotelFront}
-                  alt="Balaji Residency heritage building"
-                  className="rounded-lg shadow-temple object-cover w-full h-96"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg"></div>
+                <div className="bg-gradient-temple rounded-lg shadow-temple w-full h-96 flex items-center justify-center">
+                  <div className="text-center text-primary-foreground">
+                    <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Heart className="w-10 h-10" />
+                    </div>
+                    <h3 className="font-serif text-2xl font-bold mb-2">Traditional Hospitality</h3>
+                    <p className="text-sm opacity-90">Serving pilgrims with devotion since 2014</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

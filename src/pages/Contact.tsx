@@ -265,20 +265,58 @@ ${formData.message}
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="roomType">Preferred Room Type</Label>
-                      <Select value={formData.roomType} onValueChange={(value) => setFormData({ ...formData, roomType: value })}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select your preferred room type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {roomTypes.map((room) => (
-                            <SelectItem key={room.value} value={room.value}>
-                              {room.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="checkIn">Check-in Date</Label>
+                        <Input
+                          id="checkIn"
+                          name="checkIn"
+                          type="date"
+                          value={formData.checkIn}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="checkOut">Check-out Date</Label>
+                        <Input
+                          id="checkOut"
+                          name="checkOut"
+                          type="date"
+                          value={formData.checkOut}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="guests">Number of Guests</Label>
+                        <Input
+                          id="guests"
+                          name="guests"
+                          type="number"
+                          min="1"
+                          max="10"
+                          value={formData.guests}
+                          onChange={handleInputChange}
+                          placeholder="Number of guests"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="roomType">Preferred Room Type</Label>
+                        <Select value={formData.roomType} onValueChange={(value) => setFormData({ ...formData, roomType: value })}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select your preferred room type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {roomTypes.map((room) => (
+                              <SelectItem key={room.value} value={room.value}>
+                                {room.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
                     </div>
 
                     <div className="space-y-2">

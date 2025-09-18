@@ -4,7 +4,6 @@ import BookingCTA from "@/components/BookingCTA";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Star, Users, Award, Clock } from "lucide-react";
-import hotelFront from "@/assets/hotel-front.jpg";
 import templeView from "@/assets/temple-view.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
 
@@ -126,16 +125,11 @@ const Index = () => {
                 ))}
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src={hotelFront}
-                  alt="Balaji Residency front view"
-                  className="rounded-lg shadow-temple object-cover h-48 w-full"
-                />
+              <div className="flex justify-center">
                 <img
                   src={roomInterior}
                   alt="Comfortable room interior"
-                  className="rounded-lg shadow-temple object-cover h-48 w-full"
+                  className="rounded-lg shadow-temple object-cover h-96 w-full max-w-md"
                 />
               </div>
             </div>
