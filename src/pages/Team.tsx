@@ -3,38 +3,34 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Quote, Users, Award, Heart, Shield, Phone, MapPin, GraduationCap, Trophy } from "lucide-react";
+import { Star, Quote, Users, Award, Heart, Shield, Phone, MapPin, GraduationCap, Trophy, Building2, Crown, Medal, Briefcase } from "lucide-react";
 import ownerPhoto from "@/assets/owner-photo.jpg";
 
 const Team = () => {
   const testimonials = [
     {
-      name: "Ramesh Iyer",
-      location: "Chennai",
+      name: "Rajesh Kumar",
+      location: "Chennai, Tamil Nadu",
       rating: 5,
-      quote: "Clean, peaceful, and very close to temple. Staff was kind and helpful throughout our stay. The traditional decor made us feel at home.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      quote: "மிகவும் சுத்தமான மற்றும் அமைதியான இடம். கோவிலுக்கு மிக அருகில் இருப்பதால் மிகவும் வசதியாக இருந்தது. ஸ்டாஃப் மிகவும் உதவியாக இருந்தனர்."
     },
     {
-      name: "Meena Subramani",
-      location: "Thanjavur",
+      name: "Meenakshi Sundaram",
+      location: "Thanjavur, Tamil Nadu",
       rating: 5,
-      quote: "Best lodging near Saneeswaran temple. Came with family and everyone was comfortable. The rooms were spacious and clean.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b098?w=150&h=150&fit=crop&crop=face"
+      quote: "சனீஸ்வரன் கோவிலுக்கு அருகில் உள்ள சிறந்த தங்குமிடம். குடும்பத்துடன் வந்தோம், எல்லோருக்கும் வசதியாக இருந்தது. அறைகள் விசாலமாகவும் சுத்தமாகவும் இருந்தன."
     },
     {
-      name: "Prakash Kumar",
-      location: "Bangalore",
+      name: "Prakash Iyer",
+      location: "Bangalore, Karnataka",
       rating: 5,
-      quote: "Excellent service and perfect location. Will definitely return for future visits. The staff understands pilgrims' needs very well.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      quote: "சிறந்த சேவை மற்றும் சரியான இடம். எதிர்கால பயணங்களுக்கு நிச்சயமாக மீண்டும் வருவோம். ஸ்டாஃப் பக்தர்களின் தேவைகளை நன்கு புரிந்துகொள்கிறார்கள்."
     },
     {
-      name: "Lakshmi Devi",
-      location: "Kumbakonam",
+      name: "Lakshmi Narayanan",
+      location: "Kumbakonam, Tamil Nadu",
       rating: 5,
-      quote: "Perfect for devotees. Traditional feel with modern comfort. The staff understands the needs of pilgrims very well.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      quote: "பக்தர்களுக்கு சரியான இடம். பாரம்பரிய உணர்வுடன் நவீன வசதிகள். ஸ்டாஃப் பக்தர்களின் தேவைகளை நன்கு புரிந்துகொள்கிறார்கள்."
     }
   ];
 
@@ -57,16 +53,19 @@ const Team = () => {
   ];
 
   const achievements = [
+    { number: "20+", label: "Years Leadership", description: "Chamber of Commerce Thirunallar" },
     { number: "5000+", label: "Satisfied Guests", description: "Pilgrims who found comfort and peace" },
-    { number: "10+", label: "Years of Service", description: "Decade of traditional hospitality" },
+    { number: "6", label: "Leadership Roles", description: "From Secretary to Honorary President" },
     { number: "16", label: "Comfortable Rooms", description: "Accommodations for every need" }
   ];
 
   const ownerCareer = [
-    { year: "2013", event: "Founded Balaji Residency with a vision to serve pilgrims", icon: <Trophy className="w-5 h-5" /> },
-    { year: "2016", event: "Expanded to 16 rooms to serve more pilgrims", icon: <Users className="w-5 h-5" /> },
-    { year: "2019", event: "Recognized as 'Best Pilgrim Accommodation' by Tamil Nadu Tourism", icon: <Star className="w-5 h-5" /> },
-    { year: "2023", event: "Celebrated 10 years of service with 5000+ satisfied guests", icon: <Users className="w-5 h-5" /> }
+    { year: "2005-2007", event: "Joint Secretary - Chamber of Commerce Thirunallar", icon: <Briefcase className="w-5 h-5" /> },
+    { year: "2008-2009", event: "Secretary - Chamber of Commerce Thirunallar", icon: <Building2 className="w-5 h-5" /> },
+    { year: "2010-2014", event: "Treasurer - Chamber of Commerce Thirunallar", icon: <Medal className="w-5 h-5" /> },
+    { year: "2015-2022", event: "Head of Chamber of Commerce Thirunallar", icon: <Crown className="w-5 h-5" /> },
+    { year: "2023-2024", event: "Honorary President - Chamber of Commerce Thirunallar", icon: <Trophy className="w-5 h-5" /> },
+    { year: "2020+", event: "Joint Treasurer - Thirunallar Lodge Sangam", icon: <Award className="w-5 h-5" /> }
   ];
 
   return (
@@ -93,53 +92,73 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <img
-                  src={ownerPhoto}
-                  alt="Mr. Balaji - Owner of Balaji Residency"
-                  className="rounded-lg shadow-temple object-cover w-full h-96 lg:h-[500px]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+              <div className="relative flex justify-center lg:justify-start">
+                <div className="relative w-full max-w-md lg:max-w-none">
+                  <img
+                    src={ownerPhoto}
+                    alt="Mr. Sridhar - Owner of Balaji Residency"
+                    className="rounded-lg shadow-temple object-top w-full h-96 lg:h-[500px] mx-auto"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="bg-white/90 backdrop-blur rounded-lg p-4">
+                      <div className="flex items-center space-x-2 text-sm">
+                        <Crown className="w-4 h-4 text-temple-gold" />
+                        <span className="font-semibold text-primary">Honorary President</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">Chamber of Commerce Thirunallar</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-6">
                 <div>
                   <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-2">
-                    Mr. Balaji Kumar
+                    Mr. Sridhar
                   </h2>
                   <p className="text-lg text-temple-gold font-medium mb-4">
-                    Founder & Managing Director
+                    Founder, Owner & Honorary President
                   </p>
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center space-x-1">
-                      <GraduationCap className="w-4 h-4" />
-                      <span>B.Com, Hospitality Management</span>
+                      <Crown className="w-4 h-4" />
+                      <span>Chamber of Commerce Leader</span>
                     </div>
                     <div className="flex items-center space-x-1">
                       <MapPin className="w-4 h-4" />
                       <span>Thirunallar, Karaikal</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Building2 className="w-4 h-4" />
+                      <span>20+ Years Leadership</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With over 10 years of dedicated service in the hospitality industry, Mr. Balaji Kumar
-                    founded Balaji Residency with a simple yet profound vision: to provide every pilgrim
-                    visiting the sacred Saneeswaran Temple with comfortable, affordable, and spiritually
-                    enriching accommodation.
+                    <strong className="text-foreground">Mr. Sridhar</strong> is not just the owner of Balaji Residency,
+                    but a distinguished leader who has served Thirunallar's business community for over two decades.
+                    His remarkable journey from Joint Secretary to Honorary President of the Chamber of Commerce
+                    Thirunallar reflects his unwavering commitment to the development and prosperity of this sacred town.
                   </p>
                   <p>
-                    Born and raised in Thirunallar, he understands the deep spiritual significance of this
-                    holy town and the needs of devotees who travel from far and wide. His commitment to
-                    traditional values combined with modern hospitality standards has made Balaji Residency
-                    a trusted name among pilgrims.
+                    As the <strong className="text-foreground">Head of Chamber of Commerce Thirunallar (2015-2022)</strong>
+                    and current <strong className="text-foreground">Honorary President (2023-2024)</strong>, Mr. Sridhar
+                    has been instrumental in promoting tourism, supporting local businesses, and enhancing the
+                    infrastructure that serves thousands of pilgrims visiting the Saneeswaran Temple.
                   </p>
                   <p>
-                    Under his leadership, the residency has welcomed over 5,000 guests and continues to
-                    serve with excellence. His personal motto: "Every guest is a blessing,
-                    and their comfort is our sacred duty."
+                    His leadership extends to the <strong className="text-foreground">Thirunallar Lodge Sangam</strong>,
+                    where he serves as Joint Treasurer, ensuring that accommodation providers maintain the highest
+                    standards of hospitality. This deep understanding of both business leadership and hospitality
+                    excellence makes Balaji Residency a truly exceptional place for pilgrims to stay.
+                  </p>
+                  <p>
+                    <em className="text-temple-gold">"Service to pilgrims is not just business—it's our sacred duty
+                      and the foundation of Thirunallar's spiritual heritage."</em> - Mr. Sridhar
                   </p>
                 </div>
               </div>
@@ -153,7 +172,7 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
-              Journey of Excellence
+              Leadership Journey & Achievements
             </h2>
 
             <div className="space-y-6">
@@ -217,7 +236,7 @@ const Team = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-12">
-              Milestones of Excellence
+              Leadership Excellence & Service Milestones
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -252,37 +271,30 @@ const Team = () => {
 
             <div className="grid lg:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-                        loading="lazy"
-                      />
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <h4 className="font-semibold text-foreground">
+                <Card key={index} className="border-none shadow-warm hover:shadow-temple transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                  <CardContent className="p-8">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h4 className="font-semibold text-foreground text-lg">
                             {testimonial.name}
                           </h4>
                           <span className="text-sm text-muted-foreground">
                             from {testimonial.location}
                           </span>
                         </div>
-
-                        <div className="flex items-center space-x-1 mb-3">
+                        <div className="flex items-center space-x-1">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-temple-gold text-temple-gold" />
+                            <Star key={i} className="w-5 h-5 fill-temple-gold text-temple-gold hover:scale-110 transition-transform duration-200" />
                           ))}
                         </div>
+                      </div>
 
-                        <div className="relative">
-                          <Quote className="w-6 h-6 text-temple-gold opacity-50 absolute -top-2 -left-2" />
-                          <blockquote className="text-muted-foreground italic pl-4">
-                            {testimonial.quote}
-                          </blockquote>
-                        </div>
+                      <div className="relative">
+                        <Quote className="w-8 h-8 text-temple-gold opacity-30 absolute -top-2 -left-2" />
+                        <blockquote className="text-muted-foreground italic pl-6 text-base leading-relaxed">
+                          {testimonial.quote}
+                        </blockquote>
                       </div>
                     </div>
                   </CardContent>
@@ -303,10 +315,11 @@ const Team = () => {
                   Our Promise to You
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Every member of the Balaji Residency team is committed to making your stay
-                  memorable. From the moment you arrive until your departure, we ensure that
-                  your pilgrimage experience is enhanced by our warm hospitality and
-                  dedicated service.
+                  Under the leadership of Mr. Sridhar, Honorary President of Chamber of Commerce Thirunallar,
+                  every member of the Balaji Residency team is committed to making your stay memorable.
+                  From the moment you arrive until your departure, we ensure that your pilgrimage experience
+                  is enhanced by our warm hospitality, dedicated service, and the highest standards of
+                  accommodation excellence.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="booking" size="xl" asChild>

@@ -157,7 +157,30 @@ const Rooms = () => {
                       ))}
                     </div>
                     <Button variant="booking" size="lg" className="w-full" asChild>
-                      <a href="tel:9442422556">
+                      <a
+                        href={`https://wa.me/919442422556?text=${encodeURIComponent(`🏨 *ROOM BOOKING INQUIRY - BALAJI RESIDENCY* 🏨
+
+🏠 *ROOM DETAILS:*
+• Room Type: ${room.title}
+• Capacity: ${room.capacity}
+• Features: ${room.features.join(', ')}
+
+📅 *STAY DETAILS:*
+• Check-in Date: [Please specify]
+• Check-out Date: [Please specify]
+• Number of Guests: [Please specify]
+
+💬 *MESSAGE:*
+I would like to book the ${room.title} at Balaji Residency. Please share availability and rates for my preferred dates.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 *Balaji Residency, Thirunallar*
+📞 Call: 9442422556 / 9942024595
+🌐 Website: balajiresidency.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Phone className="w-4 h-4" />
                         Book This Room
                       </a>

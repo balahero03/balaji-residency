@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import {
   MapPin,
@@ -28,9 +29,18 @@ const Contact = () => {
     message: "",
     checkIn: "",
     checkOut: "",
-    guests: ""
+    guests: "",
+    roomType: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const roomTypes = [
+    { value: "", label: "Select Room Type" },
+    { value: "single-non-ac", label: "Single Non-AC Room (1 Person)" },
+    { value: "double-ac", label: "Double AC Room (2 People)" },
+    { value: "triple-bed", label: "Triple Bed Room (3 People)" },
+    { value: "family-suite", label: "Family Suite (5 Beds)" }
+  ];
 
   const contactInfo = [
     {
@@ -75,7 +85,7 @@ const Contact = () => {
     }
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -98,23 +108,29 @@ const Contact = () => {
     }
 
     // Create WhatsApp message
-    const whatsappMessage = `*New Booking Inquiry - Balaji Residency*
+    const whatsappMessage = `🏨 *NEW BOOKING INQUIRY - BALAJI RESIDENCY* 🏨
 
-👤 *Guest Details:*
-Name: ${formData.name}
-Phone: ${formData.phone}
-${formData.email ? `Email: ${formData.email}` : ''}
+👤 *GUEST DETAILS:*
+• Name: ${formData.name}
+• Phone: ${formData.phone}
+${formData.email ? `• Email: ${formData.email}` : ''}
 
-📅 *Stay Details:*
-${formData.checkIn ? `Check-in: ${formData.checkIn}` : ''}
-${formData.checkOut ? `Check-out: ${formData.checkOut}` : ''}
-${formData.guests ? `Number of Guests: ${formData.guests}` : ''}
+🏠 *ROOM PREFERENCES:*
+${formData.roomType ? `• Room Type: ${roomTypes.find(r => r.value === formData.roomType)?.label || formData.roomType}` : '• Room Type: Not specified'}
 
-💬 *Message:*
+📅 *STAY DETAILS:*
+${formData.checkIn ? `• Check-in Date: ${formData.checkIn}` : '• Check-in Date: Not specified'}
+${formData.checkOut ? `• Check-out Date: ${formData.checkOut}` : '• Check-out Date: Not specified'}
+${formData.guests ? `• Number of Guests: ${formData.guests}` : '• Number of Guests: Not specified'}
+
+💬 *MESSAGE:*
 ${formData.message}
 
----
-*Sent from balajiresidency.com*`;
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 *Balaji Residency, Thirunallar*
+📞 Call: 9442422556 / 9942024595
+🌐 Website: balajiresidency.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
     const whatsappUrl = `https://wa.me/919442422556?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -136,7 +152,8 @@ ${formData.message}
         message: "",
         checkIn: "",
         checkOut: "",
-        guests: ""
+        guests: "",
+        roomType: ""
       });
 
     } catch (error) {
@@ -246,6 +263,22 @@ ${formData.message}
                           required
                         />
                       </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="roomType">Preferred Room Type</Label>
+                      <Select value={formData.roomType} onValueChange={(value) => setFormData({ ...formData, roomType: value })}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select your preferred room type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {roomTypes.map((room) => (
+                            <SelectItem key={room.value} value={room.value}>
+                              {room.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">

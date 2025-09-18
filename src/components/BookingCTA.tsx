@@ -17,17 +17,39 @@ const BookingCTA = () => {
       <Button
         variant="temple"
         size="icon"
-        className="rounded-full w-14 h-14 shadow-lg hover:scale-110 transition-transform"
+        className="rounded-full w-14 h-14 shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
         asChild
       >
         <a
-          href="https://wa.me/919442422556?text=Hi,%20I%20would%20like%20to%20book%20a%20room%20at%20Balaji%20Residency%20Thirunallar.%20Please%20share%20availability%20and%20rates."
+          href={`https://wa.me/919442422556?text=${encodeURIComponent(`🏨 *QUICK BOOKING INQUIRY - BALAJI RESIDENCY* 🏨
+
+👤 *GUEST DETAILS:*
+• Name: [Please provide your name]
+• Phone: [Please provide your phone number]
+
+🏠 *ROOM PREFERENCES:*
+• Room Type: [Please specify your preference]
+• Number of Guests: [Please specify]
+
+📅 *STAY DETAILS:*
+• Check-in Date: [Please specify]
+• Check-out Date: [Please specify]
+
+💬 *MESSAGE:*
+Hi! I would like to book a room at Balaji Residency, Thirunallar. Please share availability and rates for my preferred dates.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📍 *Balaji Residency, Thirunallar*
+📞 Call: 9442422556 / 9942024595
+🌐 Website: balajiresidency.com
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Booking"
           onClick={handleWhatsAppClick}
         >
-          <MessageCircle className="w-6 h-6" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <MessageCircle className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
         </a>
       </Button>
 
@@ -35,7 +57,7 @@ const BookingCTA = () => {
       <Button
         variant="booking"
         size="icon"
-        className="rounded-full w-14 h-14 shadow-lg hover:scale-110 transition-transform"
+        className="rounded-full w-14 h-14 shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
         asChild
       >
         <a
@@ -43,7 +65,8 @@ const BookingCTA = () => {
           aria-label="Call for Booking"
           onClick={handlePhoneClick}
         >
-          <Phone className="w-6 h-6" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <Phone className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
         </a>
       </Button>
     </div>
