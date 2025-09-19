@@ -38,6 +38,7 @@ import templePond from "@/assets/temple/Temple_pond.jpg";
 import templeThear from "@/assets/temple/temple _thear.jpg";
 import crowdsAtTemple from "@/assets/temple/crowds-at-Thirunallar.jpg";
 import crowdAtTemple from "@/assets/temple/croud_at_temple.jpg";
+import logo from "@/assets/logo.jpg";
 
 const Temple = () => {
     const [activeTab, setActiveTab] = useState("overview");
@@ -1196,6 +1197,15 @@ const Temple = () => {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
+                        {/* Logo */}
+                        <div className="mb-8">
+                            <img
+                                src={logo}
+                                alt="Thirunallar Saniswaran Temple Logo"
+                                className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full shadow-2xl border-4 border-white/30 object-cover"
+                            />
+                        </div>
+
                         <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
                             <Star className="w-5 h-5 text-yellow-400" />
                             <span className="text-sm font-medium text-white">Sacred Destination</span>
@@ -1263,9 +1273,16 @@ const Temple = () => {
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-4">
-                                {currentContent.carousel.title}
-                            </h2>
+                            <div className="flex items-center justify-center gap-4 mb-6">
+                                <img
+                                    src={logo}
+                                    alt="Temple Logo"
+                                    className="w-16 h-16 rounded-full shadow-lg border-2 border-primary/20 object-cover"
+                                />
+                                <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary">
+                                    {currentContent.carousel.title}
+                                </h2>
+                            </div>
                             <p className="text-xl text-muted-foreground">
                                 {currentContent.carousel.subtitle}
                             </p>
@@ -1302,6 +1319,14 @@ const Temple = () => {
             {/* Navigation Tabs */}
             <section className="py-8 bg-background/80 backdrop-blur-sm border-b border-border">
                 <div className="container mx-auto px-4">
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                        <img
+                            src={logo}
+                            alt="Temple Logo"
+                            className="w-12 h-12 rounded-full shadow-md border-2 border-primary/20 object-cover"
+                        />
+                        <span className="text-lg font-semibold text-primary">Explore Temple Information</span>
+                    </div>
                     <div className="flex flex-wrap justify-center gap-2">
                         {tabs.map((tab) => {
                             const Icon = tab.icon;
