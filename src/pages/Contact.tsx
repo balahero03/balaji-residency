@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import {
   MapPin,
@@ -116,7 +115,7 @@ const Contact = () => {
 ${formData.email ? `• Email: ${formData.email}` : ''}
 
 🏠 *ROOM PREFERENCES:*
-${formData.roomType ? `• Room Type: ${roomTypes.find(r => r.value === formData.roomType)?.label || formData.roomType}` : '• Room Type: Not specified'}
+${formData.roomType ? `• Room Type: ${formData.roomType}` : '• Room Type: Not specified'}
 
 📅 *STAY DETAILS:*
 ${formData.checkIn ? `• Check-in Date: ${formData.checkIn}` : '• Check-in Date: Not specified'}
@@ -304,18 +303,19 @@ ${formData.message}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="roomType">Preferred Room Type</Label>
-                        <Select value={formData.roomType} onValueChange={(value) => setFormData({ ...formData, roomType: value })}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select your preferred room type" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {roomTypes.map((room) => (
-                              <SelectItem key={room.value} value={room.value}>
-                                {room.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <select
+                          id="roomType"
+                          name="roomType"
+                          value={formData.roomType}
+                          onChange={handleInputChange}
+                          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          {roomTypes.map((room) => (
+                            <option key={room.value} value={room.value}>
+                              {room.label}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </div>
 
