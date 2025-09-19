@@ -4,6 +4,7 @@ import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 import {
   Users,
   Snowflake,
@@ -20,6 +21,9 @@ import {
 import roomInterior from "@/assets/room-interior.jpg";
 
 const Rooms = () => {
+  // Scroll to top when component mounts
+  useScrollToTopOnMount();
+
   const roomTypes = [
     {
       title: "Single Non-AC Room",

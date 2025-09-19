@@ -4,6 +4,7 @@ import BookingCTA from "@/components/BookingCTA";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye, Download, Phone, Star, Quote } from "lucide-react";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 import templeView from "@/assets/temple-view.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
 import kolamPattern from "@/assets/kolam-pattern.jpg";

@@ -21,31 +21,8 @@ const BookingCTA = () => {
         asChild
       >
         <a
-          href={`https://wa.me/919442422556?text=${encodeURIComponent(`🏨 *QUICK BOOKING INQUIRY - BALAJI RESIDENCY* 🏨
-
-👤 *GUEST DETAILS:*
-• Name: [Please provide your name]
-• Phone: [Please provide your phone number]
-
-🏠 *ROOM PREFERENCES:*
-• Room Type: [Please specify your preference]
-• Number of Guests: [Please specify]
-
-📅 *STAY DETAILS:*
-• Check-in Date: [Please specify]
-• Check-out Date: [Please specify]
-
-💬 *MESSAGE:*
-Hi! I would like to book a room at Balaji Residency, Thirunallar. Please share availability and rates for my preferred dates.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📍 *Balaji Residency, Thirunallar*
-📞 Call: 9442422556 / 9942024595
-🌐 Website: balajiresidency.com
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp Booking"
+          href="/contact"
+          aria-label="Contact Form"
           onClick={handleWhatsAppClick}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>

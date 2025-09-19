@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 import { 
   Home, 
   Bed, 
@@ -20,6 +21,9 @@ import {
 import roomInterior from "@/assets/room-interior.jpg";
 
 const Services = () => {
+  // Scroll to top when component mounts
+  useScrollToTopOnMount();
+
   const mainServices = [
     {
       icon: <Home className="w-12 h-12" />,

@@ -6,8 +6,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Star, Users, Award, Clock } from "lucide-react";
 import templeView from "@/assets/temple-view.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 
 const Index = () => {
+  // Scroll to top when component mounts
+  useScrollToTopOnMount();
+
   const stats = [
     { icon: <Users className="w-8 h-8" />, number: "16", label: "Rooms in Residency" },
     { icon: <Users className="w-8 h-8" />, number: "5000+", label: "Happy Customers" },

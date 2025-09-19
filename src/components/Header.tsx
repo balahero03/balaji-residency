@@ -10,6 +10,7 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Temple", href: "/temple" },
     { name: "Services", href: "/services" },
     { name: "Rooms", href: "/rooms" },
     { name: "Gallery", href: "/gallery" },
@@ -41,11 +42,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-temple-gold hover:scale-105 relative group ${
-                  isActive(item.href)
-                    ? "text-temple-gold border-b-2 border-temple-gold"
-                    : "text-primary-foreground"
-                }`}
+                className={`text-sm font-medium transition-all duration-300 hover:text-temple-gold hover:scale-105 relative group ${isActive(item.href)
+                  ? "text-temple-gold border-b-2 border-temple-gold"
+                  : "text-primary-foreground"
+                  }`}
               >
                 {item.name}
                 {!isActive(item.href) && (
@@ -84,11 +84,10 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-muted hover:translate-x-2 rounded-md group ${
-                    isActive(item.href)
-                      ? "text-primary bg-muted"
-                      : "text-foreground"
-                  }`}
+                  className={`block px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-muted hover:translate-x-2 rounded-md group ${isActive(item.href)
+                    ? "text-primary bg-muted"
+                    : "text-foreground"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="group-hover:text-temple-gold transition-colors duration-300">→</span> {item.name}

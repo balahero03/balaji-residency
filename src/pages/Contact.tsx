@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 import {
   MapPin,
   Phone,
@@ -20,6 +21,9 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  // Scroll to top when component mounts
+  useScrollToTopOnMount();
+
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -32,6 +36,9 @@ const Contact = () => {
     roomType: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Get today's date in YYYY-MM-DD format
+  const today = new Date().toISOString().split('T')[0];
 
   const roomTypes = [
     { value: "", label: "Select Room Type" },
@@ -85,10 +92,27 @@ const Contact = () => {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+
+    // Date validation logic
+    if (name === 'checkIn') {
+      setFormData({
+        ...formData,
+        [name]: value,
+        // If check-out is before new check-in, clear check-out
+        checkOut: formData.checkOut && value && formData.checkOut < value ? "" : formData.checkOut
+      });
+    } else if (name === 'checkOut') {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -100,6 +124,28 @@ const Contact = () => {
       toast({
         title: "Missing Information",
         description: "Please fill in your name, phone number, and message.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate dates
+    if (formData.checkIn && formData.checkOut && formData.checkIn >= formData.checkOut) {
+      toast({
+        title: "Invalid Dates",
+        description: "Check-out date must be after check-in date.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate check-in date is not in the past
+    if (formData.checkIn && formData.checkIn < today) {
+      toast({
+        title: "Invalid Check-in Date",
+        description: "Check-in date cannot be in the past.",
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -273,7 +319,9 @@ ${formData.message}
                           type="date"
                           value={formData.checkIn}
                           onChange={handleInputChange}
+                          min={today}
                         />
+                        <p className="text-xs text-muted-foreground">Select today or future date</p>
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="checkOut">Check-out Date</Label>
@@ -283,7 +331,9 @@ ${formData.message}
                           type="date"
                           value={formData.checkOut}
                           onChange={handleInputChange}
+                          min={formData.checkIn || today}
                         />
+                        <p className="text-xs text-muted-foreground">Must be after check-in date</p>
                       </div>
                     </div>
 

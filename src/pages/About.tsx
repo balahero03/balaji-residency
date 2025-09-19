@@ -3,8 +3,12 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, Award, Star, Heart, Shield } from "lucide-react";
+import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 
 const About = () => {
+  // Scroll to top when component mounts
+  useScrollToTopOnMount();
+
   const values = [
     {
       icon: <Heart className="w-8 h-8" />,
