@@ -422,17 +422,19 @@ ${formData.message}
                       Location & Directions
                     </h3>
 
-                    {/* Embedded Map Placeholder */}
-                    <div className="bg-muted rounded-lg h-64 flex items-center justify-center mb-6">
-                      <div className="text-center">
-                        <MapPin className="w-12 h-12 text-temple-gold mx-auto mb-2" />
-                        <p className="text-muted-foreground">
-                          Interactive map will be embedded here
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Showing Balaji Residency location
-                        </p>
-                      </div>
+                    {/* Embedded Google Map */}
+                    <div className="rounded-lg overflow-hidden shadow-lg mb-6">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7860.246913578!2d79.7925233!3d10.9267874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5517123f74247d%3A0x4094ab9c8a9ba7ea!2sBalaji%20Residency!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
+                        width="100%"
+                        height="256"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Balaji Residency Location Map"
+                        className="w-full h-64"
+                      ></iframe>
                     </div>
 
                     <Button variant="outline" size="lg" className="w-full mb-4" asChild>
