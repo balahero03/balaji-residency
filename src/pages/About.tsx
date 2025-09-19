@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, Award, Star, Heart, Shield } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 
 const About = () => {
@@ -41,6 +42,13 @@ const About = () => {
       <section className="py-20 lg:py-32 bg-gradient-earth">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img
+                src={logo}
+                alt="Balaji Residency Logo"
+                className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full shadow-lg border-2 border-primary/20 object-cover"
+              />
+            </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
               About Balaji Residency
             </h1>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,13 +27,20 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="group-hover:scale-105 transition-transform duration-300">
-              <h1 className="font-serif font-bold text-xl lg:text-2xl text-primary-foreground group-hover:text-temple-gold transition-colors duration-300">
-                Balaji Residency
-              </h1>
-              <p className="text-xs text-primary-foreground/80 hidden sm:block group-hover:text-temple-gold/80 transition-colors duration-300">
-                Where Devotion Meets Comfort
-              </p>
+            <div className="flex items-center gap-3 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src={logo}
+                alt="Balaji Residency Logo"
+                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full shadow-lg border-2 border-primary-foreground/20 object-cover"
+              />
+              <div>
+                <h1 className="font-serif font-bold text-xl lg:text-2xl text-primary-foreground group-hover:text-temple-gold transition-colors duration-300">
+                  Balaji Residency
+                </h1>
+                <p className="text-xs text-primary-foreground/80 hidden sm:block group-hover:text-temple-gold/80 transition-colors duration-300">
+                  Where Devotion Meets Comfort
+                </p>
+              </div>
             </div>
           </Link>
 

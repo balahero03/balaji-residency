@@ -4,14 +4,14 @@ import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
-import { 
-  Home, 
-  Bed, 
-  Car, 
-  Droplets, 
-  Wifi, 
-  Zap, 
-  MapPin, 
+import {
+  Home,
+  Bed,
+  Car,
+  Droplets,
+  Wifi,
+  Zap,
+  MapPin,
   Snowflake,
   Phone,
   Users,
@@ -19,6 +19,7 @@ import {
   Clock
 } from "lucide-react";
 import roomInterior from "@/assets/room-interior.jpg";
+import logo from "@/assets/logo.jpg";
 
 const Services = () => {
   // Scroll to top when component mounts
@@ -33,7 +34,7 @@ const Services = () => {
     },
     {
       icon: <Bed className="w-12 h-12" />,
-      title: "Lodging Service", 
+      title: "Lodging Service",
       description: "Rooms that balance budget with comfort and amenities. Perfect for pilgrims and travelers seeking affordable yet comfortable accommodation near the temple.",
       features: ["Budget-friendly", "Clean and comfortable", "Essential amenities", "Pilgrim-focused"]
     },
@@ -81,11 +82,18 @@ const Services = () => {
       <section className="py-20 lg:py-32 bg-gradient-earth">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <img
+                src={logo}
+                alt="Balaji Residency Logo"
+                className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full shadow-lg border-2 border-primary/20 object-cover"
+              />
+            </div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
               Our Top Notch Services
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Experience the perfect blend of traditional hospitality and modern amenities, 
+              Experience the perfect blend of traditional hospitality and modern amenities,
               designed specifically for pilgrims and travelers visiting Thirunallar
             </p>
           </div>
@@ -134,7 +142,7 @@ const Services = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Premium Amenities Included
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 {amenities.map((amenity, index) => (
@@ -153,10 +161,10 @@ const Services = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="relative">
-                <img 
-                  src={roomInterior} 
+                <img
+                  src={roomInterior}
                   alt="Room amenities at Balaji Residency"
                   className="rounded-lg shadow-temple object-cover w-full h-96"
                 />
@@ -174,7 +182,7 @@ const Services = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary text-center mb-12">
               Additional Guest Services
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {additionalServices.map((service, index) => (
                 <Card key={index} className="border-none shadow-warm">
@@ -200,7 +208,7 @@ const Services = () => {
             Need Custom Services?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            We're here to make your pilgrimage comfortable and memorable. 
+            We're here to make your pilgrimage comfortable and memorable.
             Contact us for any special requirements or additional services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

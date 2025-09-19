@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Star, Users, Award, Clock } from "lucide-react";
 import templeView from "@/assets/temple-view.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
+import logo from "@/assets/logo.jpg";
 import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 
 const Index = () => {
@@ -39,6 +40,13 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+          <div className="mb-8">
+            <img
+              src={logo}
+              alt="Balaji Residency Logo"
+              className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full shadow-2xl border-4 border-white/30 object-cover mb-6"
+            />
+          </div>
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-kolam-pulse">
             Balaji Residency
           </h1>

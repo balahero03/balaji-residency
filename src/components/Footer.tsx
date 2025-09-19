@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ExternalLink, Heart, Star, Award, Clock } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -29,13 +30,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Section */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-temple rounded-full flex items-center justify-center">
-                <Award className="w-5 h-5 text-primary-foreground" />
+            <div className="flex items-center space-x-3">
+              <img
+                src={logo}
+                alt="Balaji Residency Logo"
+                className="w-12 h-12 rounded-full shadow-lg border-2 border-primary/20 object-cover"
+              />
+              <div>
+                <h3 className="font-serif font-bold text-xl text-primary">
+                  Balaji Residency
+                </h3>
+                <p className="text-xs text-muted-foreground">Where Devotion Meets Comfort</p>
               </div>
-              <h3 className="font-serif font-bold text-xl text-primary">
-                Balaji Residency
-              </h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Where Devotion Meets Comfort. Traditional hospitality just 50 meters
