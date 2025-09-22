@@ -4,7 +4,7 @@ import BookingCTA from "@/components/BookingCTA";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Star, Users, Award, Clock } from "lucide-react";
-import templeView from "@/assets/temple-view.jpg";
+import shopImage from "@/assets/shop.jpg";
 import roomInterior from "@/assets/room-interior.jpg";
 import logo from "@/assets/logo.jpg";
 import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
@@ -34,7 +34,7 @@ const Index = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${templeView})` }}
+          style={{ backgroundImage: `url(${shopImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
         </div>
