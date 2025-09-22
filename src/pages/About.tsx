@@ -4,6 +4,7 @@ import BookingCTA from "@/components/BookingCTA";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Clock, Award, Star, Heart, Shield } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import templeView from "@/assets/temple-view.jpg";
 import { useScrollToTopOnMount } from "@/hooks/useScrollToTop";
 
 const About = () => {
@@ -39,8 +40,14 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-earth">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${templeView})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <img
@@ -49,10 +56,10 @@ const About = () => {
                 className="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full shadow-lg border-2 border-primary/20 object-cover"
               />
             </div>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               About Balaji Residency
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
               A family legacy of devotion, service, and traditional hospitality
               in the sacred town of Thirunallar
             </p>
