@@ -79,13 +79,13 @@ const Contact = () => {
         "Reception: 24/7 Available",
         "Early check-in: On request"
       ]
-    },
+    },  
     {
       icon: <Navigation className="w-6 h-6" />,
       title: "Getting Here",
       details: [
         "50m from Saneeswaran Temple",
-        "2km from Karaikal Bus Stand",
+        "4km from Karaikal Bus Stand",
         "15km from Karaikal Railway Station",
         "Free parking available"
       ]
@@ -454,7 +454,7 @@ ${formData.message}
                         <div>
                           <h4 className="font-medium text-foreground">From Karaikal Bus Stand</h4>
                           <p className="text-sm text-muted-foreground">
-                            Take auto/taxi towards Thirunallar (8 km). Get down at Saneeswaran Temple.
+                            Take auto/taxi towards Thirunallar (4 km). Get down at Saneeswaran Temple.
                             Balaji Residency is just 50 meters from the temple.
                           </p>
                         </div>
@@ -543,7 +543,7 @@ ${formData.message}
               </CardContent>
             </Card>
           </div>
-        </div>
+        </div>ss
       </section>
 
       <BookingCTA />
